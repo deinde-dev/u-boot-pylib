@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=78.1.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "u-boot-pylib"
+version = "0.1.0"
+authors = [
+  { name="Simon Glass", email="sjg@chromium.org" },
+]
+description = "Python library used by U-Boot tools such as patman, binman and buildman"
+readme = "README.rst"
+requires-python = ">=3.9"
+license = "GPL-2.0-or-later"
+license-files = ["LICENSE"]
+keywords = ["u-boot", "subprocess", "git", "testing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Embedded Systems",
+    "Intended Audience :: Developers",
+]
+
+[project.optional-dependencies]
+# Running test suites in parallel and checking their coverage
+test = ["concurrencytest", "coverage"]
+# Running Claude agents (see u_boot_pylib.claude)
+claude = ["claude-agent-sdk"]
+
+[project.urls]
+Homepage = "https://github.com/nxtboot/u-boot-pylib"
+Documentation = "https://u-boot-pylib.readthedocs.io/"
+Repository = "https://github.com/nxtboot/u-boot-pylib"
+"Bug Tracker" = "https://github.com/nxtboot/u-boot-pylib/issues"
+
+[tool.setuptools.packages.find]
+include = ["u_boot_pylib*"]

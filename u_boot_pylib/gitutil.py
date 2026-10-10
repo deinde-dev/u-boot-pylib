@@ -1144,7 +1144,7 @@ def get_top_level():
     This test makes sure that we are running tests in the right subdir
 
     >>> os.path.realpath(os.path.dirname(__file__)) == \
-            os.path.join(get_top_level(), 'tools', 'u_boot_pylib')
+            os.path.join(get_top_level(), 'u_boot_pylib')
     True
     """
     result = command.run_one(
