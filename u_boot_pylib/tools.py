@@ -329,20 +329,23 @@ def get_target_compile_tool(name, cross_compile=None):
         target_name = name
     return target_name, extra_args
 
-def get_env_with_path():
+def get_env_with_path(env=None):
     """Get an updated environment with the PATH variable set correctly
 
     If there are any search paths set, these need to come first in the PATH so
     that these override any other version of the tools.
 
+    Args:
+        env (dict): Environment to start from, or None to use os.environ
+
     Returns:
-        dict: New environment with PATH updated, or None if there are not search
+        dict: New environment with PATH updated, or env if there are no search
             paths
     """
     if tool_search_paths:
-        env = dict(os.environ)
-        env['PATH'] = ':'.join(tool_search_paths) + ':' + env['PATH']
-        return env
+        env = dict(os.environ if env is None else env)
+        env['PATH'] = ':'.join(tool_search_paths) + ':' + env.get('PATH', '')
+    return env
 
 def run_result(name, *args, **kwargs):
     """Run a tool with some arguments
@@ -358,6 +361,7 @@ def run_result(name, *args, **kwargs):
         for_target: False to run the command as-is, without resolving it
                    to the version for the compile target
         raise_on_error: Raise an error if the command fails (True by default)
+        env: Environment to run the tool in, or None to use os.environ
 
     Returns:
         CommandResult object
@@ -367,7 +371,7 @@ def run_result(name, *args, **kwargs):
         for_host = kwargs.get('for_host', False)
         for_target = kwargs.get('for_target', not for_host)
         raise_on_error = kwargs.get('raise_on_error', True)
-        env = get_env_with_path()
+        env = get_env_with_path(kwargs.get('env'))
         if for_target:
             name, extra_args = get_target_compile_tool(name)
             args = tuple(extra_args) + args
@@ -385,7 +389,7 @@ def run_result(name, *args, **kwargs):
                                   result.stderr or result.stdout))
         return result
     except ValueError:
-        if env and not path_has_file(env['PATH'], name):
+        if env and not path_has_file(env.get('PATH', ''), name):
             msg = "Please install tool '%s'" % name
             package = packages.get(name)
             if package:
@@ -429,6 +433,7 @@ def run(name, *args, **kwargs):
         for_host: True to resolve the command to the version for the host
         for_target: False to run the command as-is, without resolving it
                    to the version for the compile target
+        env: Environment to run the tool in, or None to use os.environ
 
     Returns:
         CommandResult object

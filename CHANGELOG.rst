@@ -18,3 +18,9 @@ Changed
   continuing the releases made from the U-Boot tree.
 - Documentation is now published at https://u-boot-pylib.readthedocs.io/,
   including a reference for each module.
+
+Fixed
+~~~~~
+- ``tools.run()`` and ``tools.run_result()`` use the environment given by
+  their ``env`` argument. Before, this was silently ignored, so a tool always
+  ran in the environment of the calling program.
