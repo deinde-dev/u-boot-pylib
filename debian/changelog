@@ -1,0 +1,6 @@
+u-boot-pylib (0.1.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #XXXXXX)
+    TODO: replace #XXXXXX with the ITP (wnpp) bug number before upload.
+
+ -- Simon Glass <sjg@chromium.org>  Sat, 10 Oct 2026 08:00:00 -0600

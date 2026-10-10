@@ -1,0 +1,33 @@
+Source: u-boot-pylib
+Section: python
+Priority: optional
+Maintainer: Simon Glass <sjg@chromium.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-python3,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-setuptools,
+Standards-Version: 4.7.0
+Homepage: https://github.com/nxtboot/u-boot-pylib
+Rules-Requires-Root: no
+
+Package: python3-u-boot-pylib
+Architecture: all
+Depends:
+ ${python3:Depends},
+ ${misc:Depends},
+Recommends:
+ git,
+Description: Python library used by U-Boot tools such as patman and buildman
+ This library provides the common code used by U-Boot's Python tools,
+ including patman, binman and buildman:
+ .
+  - running commands and pipelines and capturing their output
+  - running tools and handling files and temporary directories
+  - working with git repositories
+  - coloured terminal output and logging
+  - running test suites, in parallel where possible
+ .
+ Running Claude agents (u_boot_pylib.claude) needs the claude-agent-sdk,
+ which is not packaged in Debian and so is not pulled in here.
