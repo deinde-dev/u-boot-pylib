@@ -8,6 +8,9 @@ the project follows `Semantic Versioning <https://semver.org/>`_.
 Unreleased
 ----------
 
+0.1.0 - 2026-10-10
+------------------
+
 Changed
 ~~~~~~~
 - The library is now developed in its own repository at
@@ -24,3 +27,9 @@ Fixed
 - ``tools.run()`` and ``tools.run_result()`` use the environment given by
   their ``env`` argument. Before, this was silently ignored, so a tool always
   ran in the environment of the calling program.
+
+Earlier releases
+----------------
+
+Versions 0.0.2 to 0.0.7 were published from ``tools/u_boot_pylib`` in the
+U-Boot tree.
