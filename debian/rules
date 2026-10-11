@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=u_boot_pylib
+
+# Some tests expect to run in a git checkout of the library, so they are not
+# run at build time; debian/tests runs a smoke test of the installed package
+export PYBUILD_DISABLE=test
+
+%:
+	dh $@ --buildsystem=pybuild

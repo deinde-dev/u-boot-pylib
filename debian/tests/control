@@ -1,0 +1,2 @@
+Test-Command: python3 -c "from u_boot_pylib import command, cros_subprocess, gitutil, terminal, test_util, tools, tout; print(tools.run('sh', '-c', 'echo ok', for_target=False))"
+Restrictions: allow-stderr
