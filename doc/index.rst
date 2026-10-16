@@ -2,7 +2,7 @@
 
 .. include:: ../README.rst
 
-The project is hosted at https://github.com/nxtboot/u-boot-pylib
+The project is hosted at https://github.com/deinde-dev/u-boot-pylib
 
 .. toctree::
    :maxdepth: 2

@@ -10,7 +10,7 @@ Build-Depends:
  python3-all,
  python3-setuptools,
 Standards-Version: 4.7.0
-Homepage: https://github.com/nxtboot/u-boot-pylib
+Homepage: https://github.com/deinde-dev/u-boot-pylib
 Vcs-Git: https://salsa.debian.org/sjg1/u-boot-pylib.git
 Vcs-Browser: https://salsa.debian.org/sjg1/u-boot-pylib
 Rules-Requires-Root: no

@@ -14,7 +14,7 @@ Unreleased
 Changed
 ~~~~~~~
 - The library is now developed in its own repository at
-  https://github.com/nxtboot/u-boot-pylib, with its history carried over from
+  https://github.com/deinde-dev/u-boot-pylib, with its history carried over from
   the U-Boot tree, where it lived in ``tools/u_boot_pylib``. The history of
   the modules which started out in patman is included too.
 - The package is published from that repository as ``u-boot-pylib``,

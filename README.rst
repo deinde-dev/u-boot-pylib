@@ -4,9 +4,9 @@ U-Boot Python Library
 =====================
 
 This is a Python library used by various U-Boot tools, including
-`patman <https://github.com/nxtboot/patman>`_,
-`binman <https://github.com/nxtboot/binman>`_ and
-`buildman <https://github.com/nxtboot/buildman>`_. It provides:
+`patman <https://github.com/deinde-dev/patman>`_,
+`binman <https://github.com/deinde-dev/binman>`_ and
+`buildman <https://github.com/deinde-dev/buildman>`_. It provides:
 
 - ``command`` and ``cros_subprocess``: running commands and pipelines,
   capturing their output

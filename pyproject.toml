@@ -29,10 +29,10 @@ test = ["concurrencytest", "coverage"]
 claude = ["claude-agent-sdk"]
 
 [project.urls]
-Homepage = "https://github.com/nxtboot/u-boot-pylib"
+Homepage = "https://github.com/deinde-dev/u-boot-pylib"
 Documentation = "https://u-boot-pylib.readthedocs.io/"
-Repository = "https://github.com/nxtboot/u-boot-pylib"
-"Bug Tracker" = "https://github.com/nxtboot/u-boot-pylib/issues"
+Repository = "https://github.com/deinde-dev/u-boot-pylib"
+"Bug Tracker" = "https://github.com/deinde-dev/u-boot-pylib/issues"
 
 [tool.setuptools.packages.find]
 include = ["u_boot_pylib*"]
